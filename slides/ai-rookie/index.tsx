@@ -1174,7 +1174,7 @@ const Roadmap: Page = () => (
   <SlideShell variant="tint">
     <TopBar eyebrow="今日課程 · Roadmap" />
     <Title>
-      今天的課程，<Accent>三個動手高潮</Accent>
+      今天的課程，<Accent>三個動手實作課</Accent>
     </Title>
     <div style={{ marginTop: 40, flex: 1, display: 'flex', flexDirection: 'column' }}>
       <div
@@ -2154,7 +2154,7 @@ const PromptSkillB: Page = () => (
 
 const HandsOnSkillA: Page = () => (
   <SlideShell>
-    <TopBar eyebrow="★ 高潮 ① · Skill 寫關於自己" />
+    <TopBar eyebrow="★ 動手實作課 ① · Skill 寫關於自己" />
     <Title>
       動手：讓 Skill <Accent>採訪你</Accent>
     </Title>
@@ -2237,7 +2237,7 @@ const BeforeAfterCard = ({
 
 const HandsOnSkillB: Page = () => (
   <SlideShell variant="tint">
-    <TopBar eyebrow="★ 高潮 ① · Skill 寫關於自己" />
+    <TopBar eyebrow="★ 動手實作課 ① · Skill 寫關於自己" />
     <div style={{ display: 'flex', gap: 28, alignItems: 'stretch', marginBottom: 40 }}>
       <BeforeAfterCard label="之前" title="空白 vault" lines={['(empty)', '0 notes']} />
       <Arrow />
@@ -2589,7 +2589,7 @@ const WportCliB: Page = () => (
         <CopyButton text={WPORT_PROMPT} />
       </div>
       <Body style={{ fontSize: 28 }}>
-        讓 AI 幫你解讀職缺、挑出最適合的——<Accent>這，是一秒的事。</Accent>
+        在你<Ink>大改風格、想法</Ink>之前——<Accent>先存檔。</Accent>
       </Body>
     </div>
   </SlideShell>
@@ -2597,7 +2597,7 @@ const WportCliB: Page = () => (
 
 const WorkflowPrompt: Page = () => (
   <SlideShell>
-    <TopBar eyebrow="★ 高潮 ② · 組合拳工作流" />
+    <TopBar eyebrow="★ 動手實作課 ② · 組合拳工作流" />
     <Title>
       貼一段 <Accent>prompt</Accent>，串起整條鏈
     </Title>
@@ -2690,7 +2690,7 @@ const FlowBox = ({ children, accent = false }: { children: React.ReactNode; acce
 
 const ReportA: Page = () => (
   <SlideShell>
-    <TopBar eyebrow="★ 高潮 ② · wport 履歷 + 報告書" />
+    <TopBar eyebrow="★ 動手實作課 ② · wport 履歷 + 報告書" />
     <Title>
       你的資料 ＋ 職缺，<Accent>一秒成書</Accent>
     </Title>
@@ -2729,7 +2729,7 @@ const ReportA: Page = () => (
 
 const ReportB: Page = () => (
   <SlideShell variant="tint">
-    <TopBar eyebrow="★ 高潮 ② · wport 履歷 + 報告書" />
+    <TopBar eyebrow="★ 動手實作課 ② · wport 履歷 + 報告書" />
     <div
       style={{
         display: 'grid',
@@ -2822,7 +2822,7 @@ const SiteB: Page = () => (
 
 const VercelA: Page = () => (
   <SlideShell>
-    <TopBar eyebrow="★ 高潮 ③ · Vercel 上架" />
+    <TopBar eyebrow="★ 動手實作課 ③ · Vercel 上架" />
     <Title>
       一行 <Accent>vercel deploy</Accent>，網址出現
     </Title>
@@ -2864,7 +2864,7 @@ const VercelA: Page = () => (
 
 const VercelB: Page = () => (
   <SlideShell variant="tint">
-    <TopBar eyebrow="★ 高潮 ③ · Vercel 上架" />
+    <TopBar eyebrow="★ 動手實作課 ③ · Vercel 上架" />
     <BigStatement size={66}>
       你剛才有 <Accent>GitHub</Accent>、有 <Accent>Obsidian</Accent>、
       <br />有 <Accent>Skill</Accent>、有 <Accent>網站</Accent>——
@@ -3249,7 +3249,7 @@ const CallToAction: Page = () => (
         alignItems: 'flex-start',
         justifyContent: 'center',
         gap: 48,
-        marginTop: 16,
+        marginTop: 56,
       }}
     >
       <CtaColumn
@@ -3304,9 +3304,9 @@ export default [
   IdeVsChatA,
   IdeToolbox,
   RepoFork,
+  PromptSkillA,
   SsotA,
   SsotB,
-  PromptSkillA,
   NodeToken,
   WportCliA,
   WportCliB,

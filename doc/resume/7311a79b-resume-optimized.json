@@ -1,0 +1,70 @@
+{
+  "resume_name": "林小範 - 履歷（雲育鏈 Project Assistant 專案助理客製版）",
+  "personal_info": {
+    "name": "林小範",
+    "email": "example@email.com",
+    "mobile": "0912-345-678",
+    "birth_date": "1995-03-15",
+    "age_display": "31",
+    "residence_display": "台北市",
+    "country_display": "台灣"
+  },
+  "background": {
+    "job_status_display": "在職中，可面談"
+  },
+  "autobiography": "<p>我具備三年後端開發與專案交付經驗，熟悉將複雜需求拆解為可執行工作項目，並透過 Docker、CI/CD 確保交付品質與時程。在 B2B SaaS 團隊中，我經常協助產品與 QA 追蹤上線里程碑、整理會議結論與技術文件。</p><p>我期待加入雲育鏈擔任專案助理，把工程端的執行力與文件化習慣，支援雲端數位轉型與計畫專案的推動細項，與團隊一起如期完成交付。</p>",
+  "work_experience": {
+    "has_no_work_experience": false,
+    "total_years_range_display": "3-4年",
+    "work_experiences": [
+      {
+        "job_title": "Backend Engineer 後端工程師",
+        "company_name": "範例科技股份有限公司",
+        "job_type_display": "正職",
+        "duration_display": "2022/06 - 至今（3年+）",
+        "job_description": "<ul><li>拆解訂單／結帳服務需求為可追蹤工作項目，與產品、QA 協調上線時程與風險評估</li><li>撰寫 API 與部署相關技術文件，支援跨部門理解專案進度與交付內容</li><li>導入分散式追蹤與結構化 log，縮短 incident 定位時間，協助專案穩定交付</li><li>重構熱點 API，P99 latency 由 800ms 降至 200ms，以數據佐證優化成效</li></ul>"
+      },
+      {
+        "job_title": "Junior Backend Engineer 初級後端工程師",
+        "company_name": "新創範例有限公司",
+        "job_type_display": "正職",
+        "duration_display": "2021/01 - 2022/05（1年）",
+        "job_description": "<ul><li>執行 REST API 與背景任務開發，依主管分配完成子項目並準時交付</li><li>協助 monolith 模組容器化與 GitHub Actions 導入，整理部署與 onboarding 文件</li><li>參與站會與需求討論，記錄決議事項並追蹤待辦完成狀態</li></ul>"
+      }
+    ]
+  },
+  "education": [
+    {
+      "school_name": "國立範例大學",
+      "department_display": "資訊工程學系",
+      "degree_display": "學士",
+      "duration_display": "2017/09 - 2021/06"
+    }
+  ],
+  "job_condition": {
+    "feature_display": "正職",
+    "area_display": "桃園市中壢區",
+    "salary_expectation_display": "面議",
+    "available_start_display": "可面談"
+  },
+  "professional_skills": {
+    "tech_tools": "<p>Go、PostgreSQL、Docker、GitHub Actions、Prometheus、Grafana</p>",
+    "other_skills": "<p>專案文件撰寫、工作項目拆解與追蹤、跨部門溝通協調、技術數據整理、on-call 與 incident 處理</p>"
+  },
+  "language_skills": [
+    {
+      "name": "中文",
+      "level_display": "母語"
+    },
+    {
+      "name": "英文",
+      "level_display": "中等（可閱讀技術文件）"
+    }
+  ],
+  "portfolio_links": [
+    {
+      "link_title": "GitHub",
+      "link_url": "https://github.com/example"
+    }
+  ]
+}
