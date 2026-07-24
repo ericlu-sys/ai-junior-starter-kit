@@ -1,6 +1,6 @@
 # wport-ai-starter-kit
 
-**開源 AI Skills 工具包** — 搭配 [wport 職航站](https://www.wport.me) 與常用 MCP，讓 **任何新手小白** 都能用自然語言完成履歷、求職、簡報與品牌頁操作。
+**開源 AI Skills 工具包** — 搭配 [wport 職航站](https://www.wport.me) 與常用 MCP，讓 **任何新手小白** 都能用自然語言完成履歷、求職與品牌頁操作。
 
 不需要 Python、不需要自己寫 prompt。裝好 Skills，跟 AI 說你想做什麼就行。
 
@@ -14,7 +14,6 @@
 | 投特定職缺 | 「針對 enc_id `xxx` 客製履歷並給優化報告」 |
 | 模擬面試 | 「用這份 JD 出 10 道魔鬼題」 |
 | 職涯規劃 | 「我想成為 Senior 後端，給我成長路線圖」 |
-| 做簡報 | 「用 open-slide 做 8 頁產品發表簡報」 |
 | 經營品牌頁 | 「把 IG 和官網加到 HypeLink 品牌頁」 |
 | 辦活動報名 | 「建一場講座，加早鳥和一般票」 |
 | 看網站數據 | 「查 GA4 過去 30 天流量」 |
@@ -30,13 +29,13 @@
           ├── 讀 skills/*/SKILL.md
           ├── 執行 @wport/cli（exec-wport-cli）
           ├── 呼叫 MCP（HypeLink、Google Analytics）
-          └── 輸出 HTML 履歷、報告、或 open-slide 簡報
+          └── 輸出 HTML 履歷或報告
 ```
 
 ## 前置需求
 
 - **AI Agent** 且支援 Skills（例如 [Cursor](https://cursor.com)）
-- **Node.js >= 18.17**（履歷渲染、open-slide、Vercel CLI）
+- **Node.js >= 18.17**（履歷渲染、Vercel CLI）
 
 選用：
 
@@ -45,7 +44,6 @@
 | `@wport/cli` | 搜尋職缺、讀 JD | `npm install -g @wport/cli` |
 | HypeLink MCP | 品牌頁、活動 | [官方教學](https://hypelink.app/docs/ai/mcp) |
 | analytics-mcp | GA4 報表 | [google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) |
-| open-slide | Agent 原生簡報 | `npx @open-slide/cli init my-slide` |
 
 ## 快速開始（3 步）
 
@@ -60,7 +58,7 @@ gh repo fork contactwport/wport-ai-starter-kit --clone
 cd wport-ai-starter-kit
 ```
 
-之後請在自己的 fork 上改履歷、簡報與輸出；需要同步上游更新時：
+之後請在自己的 fork 上改履歷與輸出；需要同步上游更新時：
 
 ```bash
 git remote add upstream https://github.com/contactwport/wport-ai-starter-kit.git
@@ -81,9 +79,6 @@ ln -s /path/to/wport-ai-starter-kit/skills/exec-vercel-cli       .cursor/skills/
 ln -s /path/to/wport-ai-starter-kit/skills/exec-analytics-mcp    .cursor/skills/exec-analytics-mcp
 ln -s /path/to/wport-ai-starter-kit/skills/hypelink-brand-page-mcp .cursor/skills/hypelink-brand-page-mcp
 ln -s /path/to/wport-ai-starter-kit/skills/hypelink-event-mcp    .cursor/skills/hypelink-event-mcp
-# open-slide skills（需先有 open-slide workspace）
-ln -s /path/to/wport-ai-starter-kit/skills/create-slide          .cursor/skills/create-slide
-ln -s /path/to/wport-ai-starter-kit/skills/slide-authoring       .cursor/skills/slide-authoring
 ```
 
 人類快查：[`skills/INDEX.md`](skills/INDEX.md)
@@ -111,7 +106,6 @@ Agent 會套用 `gen-resume`，產出 `resume.html`（給你看）與 `resume.js
 | 來源 | Skills |
 |------|--------|
 | [hypelink_claude_skill](https://github.com/HypeLinkOfficial/hypelink_claude_skill) | `hypelink-brand-page-mcp`, `hypelink-event-mcp` |
-| [open-slide](https://github.com/1weiho/open-slide) | `create-slide`, `slide-authoring`, `apply-comments`, `current-slide`, `create-theme` |
 | [google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) | `exec-analytics-mcp`（MCP 設定與工具指南） |
 | Vercel CLI | `exec-vercel-cli` |
 
@@ -128,71 +122,16 @@ node templates/resume/render.mjs doc/resume/resume.json doc/resume/resume.html
 node templates/report/render.mjs doc/resume/interview-prep.json doc/resume/interview-prep.html
 ```
 
-## 本機預覽 open-slide 簡報
-
-repo 根目錄已含 open-slide workspace（`slides/`、`package.json`）。第一次先裝依賴：
-
-```bash
-npm install
-```
-
-| 目的 | 指令 | 開啟方式 |
-|------|------|----------|
-| 開發預覽（熱更新） | `npm run dev` | 瀏覽器開 [http://localhost:5173](http://localhost:5173) 首頁選簡報，或直接 [http://localhost:5173/s/getting-started](http://localhost:5173/s/getting-started) |
-| 正式 build | `npm run build` | 輸出到 `dist/` |
-| 預覽 build 結果 | `npm run preview` | build 後執行，同樣用瀏覽器開 localhost |
-
-內建範例簡報 id：`getting-started`、`ai-rookie`、`ai-junior-intern-guide`、`smart-station`（路徑格式 `/s/<id>`）。
-
-用 `pnpm` 也可以：`pnpm install` → `pnpm dev` / `pnpm build` / `pnpm preview`。
-
-## 同一專案：履歷站 + open-slide 簡報站（Vercel 雙站）
-
-若 `doc/resume/`（靜態履歷 HTML）與 open-slide（`slides/` 簡報）**住在同一個 Git repo**，必須遵守 **領地劃分 + 兩個 Vercel Project**，否則 build 與 deploy 會互相覆蓋。
-
-**完整契約（所有相關 skill 共用）：** [`docs/dual-site-layout.md`](docs/dual-site-layout.md)
-
-| 做什麼 | 用哪個 skill | 檔案落在哪 | Vercel Project |
-|--------|-------------|-----------|----------------|
-| 做履歷／報告 | `gen-resume` 系列 | `doc/resume/` only | `<name>-resume` |
-| 做簡報 | `create-slide` 系列 | `slides/` only | `<name>-slides` |
-| 上架 | `exec-vercel-cli` | 分兩次 deploy，各用對應 project | 見下表 |
-
-```text
-my-workspace/
-├── doc/resume/          ← 站 A：履歷 + 職涯報告（含 vercel.json）
-├── slides/              ← open-slide 簡報原始碼
-├── package.json         ← open-slide 的 build
-└── dist/                ← 站 B build 輸出（勿與 doc/resume 混用）
-```
-
-| Vercel Project | Root Directory | Build Command | Output Directory |
-|----------------|----------------|---------------|------------------|
-| `my-resume` | `doc/resume` | `doc/resume/vercel.json` 內建 | `.`（即 doc/resume） |
-| `my-slides` | `.` | `pnpm build` | `dist` |
-
-**勿打架：** 履歷 project **禁止**跑 `pnpm build`；簡報 project **禁止** output `doc/resume`。本機 `vercel link` 一次只對一個 project，deploy 前確認 `project.json`。
-
-步驟：
-
-1. `npx vercel login`
-2. **New Project** → 同一 repo → `my-resume` → Root = `doc/resume`
-3. **New Project** → 同一 repo → `my-slides` → Build = `pnpm build`、Output = `dist`
-4. 詳細 checklist：[`skills/exec-vercel-cli/SKILL.md`](skills/exec-vercel-cli/SKILL.md)
-
 ## 目錄結構
 
 ```
 wport-ai-starter-kit/
 ├── README.md
-├── docs/
-│   └── dual-site-layout.md   # 履歷 + open-slide 同 repo 契約
 ├── skills/
 │   ├── INDEX.md              # 人類快查索引
 │   ├── exec-wport-cli/
 │   ├── gen-resume/
 │   ├── hypelink-brand-page-mcp/
-│   ├── create-slide/
 │   └── ...
 ├── templates/
 │   ├── resume/
@@ -212,7 +151,6 @@ wport-ai-starter-kit/
 
 - [@wport/cli](https://www.npmjs.com/package/@wport/cli)
 - [HypeLink MCP 文件](https://hypelink.app/docs/ai/mcp)
-- [open-slide](https://github.com/1weiho/open-slide)
 - [Google Analytics MCP](https://github.com/googleanalytics/google-analytics-mcp)
 
 ## License

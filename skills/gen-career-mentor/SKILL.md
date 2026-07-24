@@ -32,10 +32,6 @@ Agent workflow: write `doc/resume/career-plan.json` → run `templates/report/re
 | Report JSON (internal) | `doc/resume/career-plan.json` |
 | Report HTML (user) | `doc/resume/career-plan.html` |
 
-## Monorepo with open-slide（同 repo 雙站）
-
-產物**只**在 `doc/resume/`。見 [`docs/dual-site-layout.md`](../../docs/dual-site-layout.md)。勿寫 `slides/`、`dist/`。
-
 ## Prerequisites
 
 1. **Current resume** — `doc/resume/resume.json` (or `doc/resume/resume-optimized.json`) in wport preview format ([`templates/resume/README.md`](../../templates/resume/README.md))

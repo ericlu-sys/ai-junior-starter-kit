@@ -46,17 +46,6 @@ Agent workflow: write `doc/resume/resume.json` → run `render.mjs` → hand off
 
 Use a different path only when the user explicitly specifies one.
 
-## Monorepo with open-slide（同 repo 雙站）
-
-若此 repo 同時有 open-slide（`slides/`）與履歷，**必讀** [`docs/dual-site-layout.md`](../../docs/dual-site-layout.md)。
-
-**本 skill 鐵則：**
-
-- 所有履歷產物**只**寫入 `doc/resume/`（含 `resume.json`、各種 `.html` 報告）。
-- **禁止**寫入 `slides/`、`dist/`、`themes/`；**禁止**修改 `open-slide.config.ts` 或為簡報改 `package.json`。
-- **禁止**在履歷流程執行 `pnpm build` 或任何 open-slide build。
-- 使用者要「把履歷放上線」→ 交給 `exec-vercel-cli`，且只 deploy **履歷 Vercel project**（output `doc/resume`），不要 deploy 簡報站。
-
 ## Purpose
 
 - Convert scattered notes, old CVs, Obsidian vaults, or chat input into a wport resume

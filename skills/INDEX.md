@@ -3,7 +3,7 @@
 > 給開發者用的速覽手冊。**AI 不靠這份**：Cursor / Claude 會讀每個 `SKILL.md` 的 YAML `description:` 來決定何時 invoke。
 > 此 INDEX 讓你 5 秒內找到「我要叫哪個 skill」。
 
-**適用對象：** 任何想用手 AI 做履歷、求職、簡報或品牌頁的人 — 不限學生、不限年資。
+**適用對象：** 任何想用手 AI 做履歷、求職或品牌頁的人 — 不限學生、不限年資。
 
 ---
 
@@ -32,27 +32,11 @@
 
 ---
 
-## 簡報（open-slide）
-
-來源：[1weiho/open-slide](https://github.com/1weiho/open-slide)
-
-先在專案裡初始化 open-slide workspace：`npx @open-slide/cli init my-slide`
-
-| Skill | 你可以這樣說 |
-|-------|-------------|
-| [`create-slide`](create-slide/) | 「幫我做一份 8 頁的產品發表簡報」 |
-| [`slide-authoring`](slide-authoring/) | 技術參考：1920×1080 畫布、版型、配色（agent 內部用） |
-| [`apply-comments`](apply-comments/) | 「套用簡報上的 inspector 註解」 |
-| [`current-slide`](current-slide/) | 「改這一頁的標題」（當使用者指「這頁」） |
-| [`create-theme`](create-theme/) | 「做一個深色科技風主題」 |
-
----
-
 ## 部署與數據（Executors）
 
 | Skill | 你可以這樣說 |
 |-------|-------------|
-| [`exec-vercel-cli`](exec-vercel-cli/) | 「把履歷 HTML deploy 到 Vercel」「同一 repo 部署兩個站」 |
+| [`exec-vercel-cli`](exec-vercel-cli/) | 「把履歷 HTML deploy 到 Vercel」 |
 | [`exec-analytics-mcp`](exec-analytics-mcp/) | 「查 GA4 過去 30 天流量」「設定 analytics MCP」 |
 
 ---
@@ -64,8 +48,7 @@
 | 從零到投遞 | `gen-resume` → `gen-resume-optimizer` → `interviewer-ai` |
 | 轉職規劃 | `gen-career-mentor` → `gen-resume-optimizer` |
 | 活動 + 品牌頁 | `hypelink-event-mcp` + `hypelink-brand-page-mcp` |
-| 簡報 + 上線 | `create-slide` → `exec-vercel-cli` |
-| 履歷站 + 簡報站（同 repo） | 見 [`docs/dual-site-layout.md`](../docs/dual-site-layout.md) → `gen-resume` / `create-slide` 分領地 → `exec-vercel-cli` 雙 project deploy |
+| 履歷上線 | `gen-resume` → `exec-vercel-cli` |
 
 ---
 
@@ -88,6 +71,6 @@ ln -s /path/to/wport-ai-starter-kit/skills .cursor/skills/wport-ai-starter-kit
 
 ```text
 要對外部系統下指令？     → exec-* 或 *-mcp
-要產出文件／履歷／簡報？  → gen-* 或 create-slide
+要產出文件／履歷？        → gen-*
 純查詢？                → 直接用 MCP / CLI，不必寫 skill
 ```

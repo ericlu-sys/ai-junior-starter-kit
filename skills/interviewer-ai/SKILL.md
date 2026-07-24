@@ -31,10 +31,6 @@ Agent workflow: write `doc/resume/interview-prep.json` → run `templates/report
 | Report JSON (internal) | `doc/resume/interview-prep.json` |
 | Report HTML (user) | `doc/resume/interview-prep.html` |
 
-## Monorepo with open-slide（同 repo 雙站）
-
-產物**只**在 `doc/resume/`。見 [`docs/dual-site-layout.md`](../../docs/dual-site-layout.md)。勿寫 `slides/`、`dist/`。
-
 ## Prerequisites
 
 Before running, ensure:

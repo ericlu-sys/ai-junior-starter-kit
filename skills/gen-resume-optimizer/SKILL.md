@@ -39,10 +39,6 @@ Agent workflow: edit `doc/resume/resume-optimized.json` → `templates/resume/re
 | Customization JSON (internal) | `doc/resume/resume-customization.json` |
 | Customization HTML (user) | `doc/resume/resume-customization.html` |
 
-## Monorepo with open-slide（同 repo 雙站）
-
-同 [`gen-resume`](gen-resume/SKILL.md)：產物**只**在 `doc/resume/`。見 [`docs/dual-site-layout.md`](../../docs/dual-site-layout.md)。勿碰 `slides/`、`dist/`；勿跑 open-slide build。
-
 ## Prerequisites
 
 1. **Current resume** — `doc/resume/resume.json` in wport preview format ([`templates/resume/README.md`](../../templates/resume/README.md))
