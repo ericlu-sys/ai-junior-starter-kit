@@ -79,6 +79,7 @@ ln -s /path/to/wport-ai-starter-kit/skills/exec-vercel-cli       .cursor/skills/
 ln -s /path/to/wport-ai-starter-kit/skills/exec-analytics-mcp    .cursor/skills/exec-analytics-mcp
 ln -s /path/to/wport-ai-starter-kit/skills/hypelink-brand-page-mcp .cursor/skills/hypelink-brand-page-mcp
 ln -s /path/to/wport-ai-starter-kit/skills/hypelink-event-mcp    .cursor/skills/hypelink-event-mcp
+ln -s /path/to/wport-ai-starter-kit/skills/frontend-design       .cursor/skills/frontend-design
 ```
 
 人類快查：[`skills/INDEX.md`](skills/INDEX.md)
@@ -96,7 +97,7 @@ Agent 會套用 `gen-resume`，產出 `resume.html`（給你看）與 `resume.js
 | Skill | 類型 | 說明 |
 |-------|------|------|
 | [`exec-wport-cli`](skills/exec-wport-cli/) | Executor | `@wport/cli` 完整指令參考 |
-| [`gen-resume`](skills/gen-resume/) | Generator | 建立／編輯履歷 |
+| [`gen-resume`](skills/gen-resume/) | Generator | 建立／編輯履歷（訪談寫入 Obsidian，供之後建站） |
 | [`gen-resume-optimizer`](skills/gen-resume-optimizer/) | Generator | 針對職缺客製履歷 + 報告 |
 | [`gen-career-mentor`](skills/gen-career-mentor/) | Generator | 能力差距與 1/3/5 年計畫 |
 | [`interviewer-ai`](skills/interviewer-ai/) | Generator | 10 道魔鬼面試題 |
@@ -105,6 +106,7 @@ Agent 會套用 `gen-resume`，產出 `resume.html`（給你看）與 `resume.js
 
 | 來源 | Skills |
 |------|--------|
+| [anthropics/skills](https://github.com/anthropics/skills) | `frontend-design`（個人品牌站／UI 視覺） |
 | [hypelink_claude_skill](https://github.com/HypeLinkOfficial/hypelink_claude_skill) | `hypelink-brand-page-mcp`, `hypelink-event-mcp` |
 | [google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) | `exec-analytics-mcp`（MCP 設定與工具指南） |
 | Vercel CLI | `exec-vercel-cli` |
@@ -112,6 +114,9 @@ Agent 會套用 `gen-resume`，產出 `resume.html`（給你看）與 `resume.js
 ## 履歷與報告格式
 
 - 履歷：wport preview JSON → [`templates/resume/`](templates/resume/README.md)
+- Obsidian SSOT：[`vault/`](vault/README.md)（`resume.md`／`about-me.md`；長大再用資料夾分類）
+- 個人網站視覺：[`skills/frontend-design`](skills/frontend-design/)（內容讀 vault，不取代訪談）
+- 輕量靜態模板（可選）：[`templates/website/`](templates/website/README.md)
 - 報告：共用 report JSON → [`templates/report/`](templates/report/README.md)
 - 範例輸出在 [`doc/resume/`](doc/resume/)（虛構範例資料，請換成你自己的）
 

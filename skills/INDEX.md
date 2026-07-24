@@ -32,6 +32,16 @@
 
 ---
 
+## 設計與個人品牌站
+
+| Skill | 來源 | 你可以這樣說 |
+|-------|------|-------------|
+| [`frontend-design`](frontend-design/) | [anthropics/skills](https://github.com/anthropics/skills) | 「用 vault/about-me 規劃個人品牌站視覺」「這一頁不要長得像 AI 模板」 |
+
+內容 SSOT：[`vault/README.md`](../vault/README.md)。`frontend-design` 管視覺，不管訪談與履歷 JSON。
+
+---
+
 ## 部署與數據（Executors）
 
 | Skill | 你可以這樣說 |
@@ -49,6 +59,7 @@
 | 轉職規劃 | `gen-career-mentor` → `gen-resume-optimizer` |
 | 活動 + 品牌頁 | `hypelink-event-mcp` + `hypelink-brand-page-mcp` |
 | 履歷上線 | `gen-resume` → `exec-vercel-cli` |
+| 個人品牌站 | `gen-resume`（寫入 `vault/`）→ `frontend-design`（依 `about-me` 規劃／實作）→ 可選 `exec-vercel-cli` |
 
 ---
 
@@ -72,5 +83,6 @@ ln -s /path/to/wport-ai-starter-kit/skills .cursor/skills/wport-ai-starter-kit
 ```text
 要對外部系統下指令？     → exec-* 或 *-mcp
 要產出文件／履歷？        → gen-*
+要規劃／實作網站視覺？    → frontend-design（內容先看 vault/）
 純查詢？                → 直接用 MCP / CLI，不必寫 skill
 ```

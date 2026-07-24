@@ -89,8 +89,8 @@ All fields optional except `name`. A section is rendered only when it has data.
 
 ## Workflow
 
-1. Write/derive `doc/website/website.json` from your SSOT (`about-me`).
-2. Render both themes (or just the one you like).
+1. Keep `vault/about-me.md` (or equivalent Obsidian SSOT) as the source of truth. Prefer filling it via [`skills/gen-resume`](../../skills/gen-resume/SKILL.md) interview → Obsidian handoff; do **not** expect `gen-resume` to render the site.
+2. Map SSOT → `doc/website/website.json`, then render with a **website-build skill** (or manually with the commands below).
 3. Open / deploy the HTML. To publish: see [`skills/exec-vercel-cli`](../../skills/exec-vercel-cli/).
 
 When you add fields here, update `render.mjs` **and** both CSS files together.
