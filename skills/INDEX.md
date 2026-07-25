@@ -16,6 +16,7 @@
 | [`gen-resume-optimizer`](gen-resume-optimizer/) | Generator | 「針對這個 enc_id 客製履歷」 |
 | [`gen-career-mentor`](gen-career-mentor/) | Generator | 「我想轉 Senior 後端，給我 1/3/5 年計畫」 |
 | [`interviewer-ai`](interviewer-ai/) | Generator | 「模擬這份 JD 的 10 道魔鬼面試題」 |
+| [`gen-form-filler`](gen-form-filler/) | Generator | 「用我的 Obsidian 資料填這份補助計畫申請書並蓋大小章」 |
 
 ---
 
@@ -60,6 +61,15 @@
 | 活動 + 品牌頁 | `hypelink-event-mcp` + `hypelink-brand-page-mcp` |
 | 履歷上線 | `gen-resume` → `exec-vercel-cli` |
 | 個人品牌站 | `gen-resume`（寫入 `vault/`）→ `frontend-design`（依 `about-me` 規劃／實作）→ 可選 `exec-vercel-cli` |
+| 表單與申請案 | `gen-resume`（建 SSOT）→ `gen-form-filler`（填 docx／xlsx＋蓋章） |
+
+---
+
+## 動手練習
+
+| 練習 | 內容 |
+|------|------|
+| [`practice/01-fill-forms`](../practice/01-fill-forms/) | 讀 Obsidian → 填 Word 補助計畫申請書與 Excel 個人資料表 → 蓋大小章 |
 
 ---
 

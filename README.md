@@ -18,8 +18,9 @@
 | 辦活動報名 | 「建一場講座，加早鳥和一般票」 |
 | 看網站數據 | 「查 GA4 過去 30 天流量」 |
 | 上線作品 | 「把履歷 HTML deploy 到 Vercel」 |
+| 填表單、蓋大小章 | 「用我的 Obsidian 資料填這份申請書並蓋章」 |
 
-完整 skill 清單見 [`skills/INDEX.md`](skills/INDEX.md)。
+完整 skill 清單見 [`skills/INDEX.md`](skills/INDEX.md)。動手練習見 [`practice/`](practice/README.md)。
 
 ## 運作方式
 
@@ -75,6 +76,7 @@ ln -s /path/to/wport-ai-starter-kit/skills/exec-wport-cli        .cursor/skills/
 ln -s /path/to/wport-ai-starter-kit/skills/gen-resume-optimizer  .cursor/skills/gen-resume-optimizer
 ln -s /path/to/wport-ai-starter-kit/skills/gen-career-mentor     .cursor/skills/gen-career-mentor
 ln -s /path/to/wport-ai-starter-kit/skills/interviewer-ai        .cursor/skills/interviewer-ai
+ln -s /path/to/wport-ai-starter-kit/skills/gen-form-filler       .cursor/skills/gen-form-filler
 ln -s /path/to/wport-ai-starter-kit/skills/exec-vercel-cli       .cursor/skills/exec-vercel-cli
 ln -s /path/to/wport-ai-starter-kit/skills/exec-analytics-mcp    .cursor/skills/exec-analytics-mcp
 ln -s /path/to/wport-ai-starter-kit/skills/hypelink-brand-page-mcp .cursor/skills/hypelink-brand-page-mcp
@@ -101,6 +103,7 @@ Agent 會套用 `gen-resume`，產出 `resume.html`（給你看）與 `resume.js
 | [`gen-resume-optimizer`](skills/gen-resume-optimizer/) | Generator | 針對職缺客製履歷 + 報告 |
 | [`gen-career-mentor`](skills/gen-career-mentor/) | Generator | 能力差距與 1/3/5 年計畫 |
 | [`interviewer-ai`](skills/interviewer-ai/) | Generator | 10 道魔鬼面試題 |
+| [`gen-form-filler`](skills/gen-form-filler/) | Generator | 用 Obsidian 資料填 Word／Excel 表單並蓋大小章 |
 
 ### 第三方整合
 
@@ -141,8 +144,10 @@ wport-ai-starter-kit/
 ├── templates/
 │   ├── resume/
 │   └── report/
-└── doc/
-    └── resume/               # 預設輸出（範例資料）
+├── doc/
+│   └── resume/               # 預設輸出（範例資料）
+└── practice/                 # 動手練習
+    └── 01-fill-forms/        # Word／Excel 表單 + 大小章
 ```
 
 ## 貢獻
