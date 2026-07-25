@@ -121,7 +121,8 @@ Agent 會套用 `gen-resume`，產出 `resume.html`（給你看）與 `resume.js
 - 個人網站視覺：[`skills/frontend-design`](skills/frontend-design/)（內容讀 vault，不取代訪談）
 - 輕量靜態模板（可選）：[`templates/website/`](templates/website/README.md)
 - 報告：共用 report JSON → [`templates/report/`](templates/report/README.md)
-- 範例輸出在 [`doc/resume/`](doc/resume/)（虛構範例資料，請換成你自己的）
+- 產出預設路徑是 `doc/resume/`（跑完 skill 才會有東西，repo 內不附範例輸出）
+- 格式範例看 [`templates/report/examples/`](templates/report/examples/) 與 [`templates/website/examples/`](templates/website/examples/)
 
 渲染指令：
 
