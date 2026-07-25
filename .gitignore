@@ -7,3 +7,5 @@ node_modules/
 dist/
 .vercel
 .env*
+practice/01-fill-forms/output/*
+!practice/01-fill-forms/output/.gitkeep
